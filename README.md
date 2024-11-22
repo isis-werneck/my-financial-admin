@@ -1,1 +1,1 @@
-# finances-administrator
+# my-financial-admin

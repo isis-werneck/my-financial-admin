@@ -11,6 +11,10 @@ import { DashboardLayout } from 'src/layouts/dashboard';
 // ----------------------------------------------------------------------
 
 export const HomePage = lazy(() => import('src/pages/home'));
+export const ExpenseTypePage = lazy(() => import('src/pages/expense-types/expense-type'));
+export const ExpenseTypeCreatePage = lazy(() => import('src/pages/expense-types/expense-type-create'));
+export const ExpenseTypeEditPage = lazy(() => import('src/pages/expense-types/expense-type-edit'));
+export const ExpenseTypeDetailPage = lazy(() => import('src/pages/expense-types/expense-type-detail'));
 export const UserPage = lazy(() => import('src/pages/users/user'));
 export const UserCreatePage = lazy(() => import('src/pages/users/user-create'));
 export const UserEditPage = lazy(() => import('src/pages/users/user-edit'));
@@ -45,6 +49,11 @@ export function Router() {
       ),
       children: [
         { element: <HomePage />, index: true },
+
+        { path: 'expense-type', element: <ExpenseTypePage /> },
+        { path: 'expense-type/create', element: <ExpenseTypeCreatePage /> },
+        { path: 'expense-type/edit/:expenseTypeId', element: <ExpenseTypeEditPage /> },
+        { path: 'expense-type/detail/:expenseTypeId', element: <ExpenseTypeDetailPage /> },
         { path: 'users', element: <UserPage /> },
         { path: 'users/create', element: <UserCreatePage /> },
         { path: 'users/edit/:userId', element: <UserEditPage /> },

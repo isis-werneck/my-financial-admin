@@ -15,6 +15,7 @@ import { varAlpha } from 'src/theme/styles';
 
 import { Logo } from 'src/components/logo';
 import { Scrollbar } from 'src/components/scrollbar';
+import Typography from "@mui/material/Typography";
 
 // ----------------------------------------------------------------------
 
@@ -111,7 +112,15 @@ export function NavContent({ data, slots, sx }: NavContentProps) {
 
   return (
     <>
-      <Logo />
+        <Box display="flex" flexDirection="row">
+            <Logo />
+            <Typography
+                sx={{ ml: 1, mt: 1, color: 'var(--layout-nav-title-color)' }}
+            >
+                My Financial Admin
+            </Typography>
+        </Box>
+
 
       {slots?.topArea}
 

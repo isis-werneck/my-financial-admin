@@ -11,5 +11,15 @@ export const navData = [
     title: 'Dashboard',
     path: '/',
     icon: icon('ic-home'),
-  }
+  },
+  {
+    title: 'Tipos de Gastos',
+    path: '/expense-type',
+    icon: icon('ic-home'),
+  },
+  {
+    title: 'Profile',
+    path: '/profile',
+    icon: icon('ic-user'),
+  },
 ];

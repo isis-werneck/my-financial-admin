@@ -3,6 +3,7 @@ import type { BoxProps } from '@mui/material/Box';
 import { forwardRef } from 'react';
 
 import Box from '@mui/material/Box';
+import Typography from "@mui/material/Typography";
 
 import { RouterLink } from 'src/routes/components';
 
@@ -23,11 +24,13 @@ export const Logo = forwardRef<HTMLDivElement, LogoProps>(
   ) => {
 
     const singleLogo = (
-        <img src=''  alt='logo'/>
+        <a href="https://es.vecteezy.com/vectores-gratis/euro">
+            <img src='public/assets/logo.jpg' alt='logo app'/>
+        </a>
     );
 
-    const baseSize = {
-      marginBottom: marginBottom ?? 5,
+      const baseSize = {
+          marginBottom: marginBottom ?? 5,
       width: width ?? 40,
       height: height ?? 40,
       ...(!isSingle && {

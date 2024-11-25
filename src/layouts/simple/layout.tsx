@@ -24,7 +24,7 @@ export type SimpleLayoutProps = {
 export function SimpleLayout({ sx, children, header, content }: SimpleLayoutProps) {
   const layoutQuery: Breakpoint = 'md';
 
-  return (
+    return (
     <LayoutSection
       /** **************************************
        * Header
@@ -35,18 +35,18 @@ export function SimpleLayout({ sx, children, header, content }: SimpleLayoutProp
           slotProps={{ container: { maxWidth: false } }}
           sx={header?.sx}
           slots={{
-            topArea: (
-              <Alert severity="info" sx={{ display: 'none', borderRadius: 0 }}>
-                This is an info Alert.
-              </Alert>
-            ),
-            leftArea: <Logo />,
-          }}
+              topArea: (
+                  <Alert severity="info" sx={{display: 'none', borderRadius: 0}}>
+                      This is an info Alert.
+                  </Alert>
+              ),
+              leftArea: <Logo/>
+        }}
         />
       }
-      /** **************************************
-       * Footer
-       *************************************** */
+        /** **************************************
+         * Footer
+         *************************************** */
       footerSection={null}
       /** **************************************
        * Style

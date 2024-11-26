@@ -13,13 +13,28 @@ export const navData = [
     icon: icon('ic-home'),
   },
   {
-    title: 'Tipos de Gastos',
-    path: '/expense-type',
-    icon: icon('ic-home'),
+    title: 'Mis Ingresos',
+    path: '/incomes',
+    icon: icon('ic-income'),
   },
   {
-    title: 'Profile',
-    path: '/profile',
+    title: 'Mis Gastos',
+    path: '/outcomes',
+    icon: icon('ic-outcome'),
+  },
+  {
+    title: 'Tipos de Gastos',
+    path: '/expense-types',
+    icon: icon('ic-expense-type'),
+  },
+  {
+    title: 'Tipos de Pago',
+    path: '/payment-types',
+    icon: icon('ic-payment-type'),
+  },
+  {
+    title: 'Usuarios',
+    path: '/users',
     icon: icon('ic-user'),
   },
 ];

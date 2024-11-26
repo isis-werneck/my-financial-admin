@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 
 import { CONFIG } from 'src/config-global';
 
-import {ExpenseTypeForm} from 'src/sections/expense-type/expense-type-form';
+import {ExpenseTypeForm} from 'src/sections/expense-types/expense-type-form';
 
 
 // ----------------------------------------------------------------------

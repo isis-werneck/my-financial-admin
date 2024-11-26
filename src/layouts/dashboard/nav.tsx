@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import ListItem from '@mui/material/ListItem';
 import { useTheme } from '@mui/material/styles';
+import Typography from "@mui/material/Typography";
 import ListItemButton from '@mui/material/ListItemButton';
 import Drawer, { drawerClasses } from '@mui/material/Drawer';
 
@@ -15,7 +16,6 @@ import { varAlpha } from 'src/theme/styles';
 
 import { Logo } from 'src/components/logo';
 import { Scrollbar } from 'src/components/scrollbar';
-import Typography from "@mui/material/Typography";
 
 // ----------------------------------------------------------------------
 

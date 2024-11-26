@@ -11,10 +11,22 @@ import { DashboardLayout } from 'src/layouts/dashboard';
 // ----------------------------------------------------------------------
 
 export const HomePage = lazy(() => import('src/pages/home'));
+export const IncomePage = lazy(() => import('src/pages/incomes/income'));
+export const IncomeCreatePage = lazy(() => import('src/pages/incomes/income-create'));
+export const IncomeEditPage = lazy(() => import('src/pages/incomes/income-edit'));
+export const IncomeDetailPage = lazy(() => import('src/pages/incomes/income-detail'));
+export const OutcomePage = lazy(() => import('src/pages/outcomes/outcome'));
+export const OutcomeCreatePage = lazy(() => import('src/pages/outcomes/outcome-create'));
+export const OutcomeEditPage = lazy(() => import('src/pages/outcomes/outcome-edit'));
+export const OutcomeDetailPage = lazy(() => import('src/pages/outcomes/outcome-detail'));
 export const ExpenseTypePage = lazy(() => import('src/pages/expense-types/expense-type'));
 export const ExpenseTypeCreatePage = lazy(() => import('src/pages/expense-types/expense-type-create'));
 export const ExpenseTypeEditPage = lazy(() => import('src/pages/expense-types/expense-type-edit'));
 export const ExpenseTypeDetailPage = lazy(() => import('src/pages/expense-types/expense-type-detail'));
+export const PaymentTypePage = lazy(() => import('src/pages/payment-types/payment-type'));
+export const PaymentTypeCreatePage = lazy(() => import('src/pages/payment-types/payment-type-create'));
+export const PaymentTypeEditPage = lazy(() => import('src/pages/payment-types/payment-type-edit'));
+export const PaymentTypeDetailPage = lazy(() => import('src/pages/payment-types/payment-type-detail'));
 export const UserPage = lazy(() => import('src/pages/users/user'));
 export const UserCreatePage = lazy(() => import('src/pages/users/user-create'));
 export const UserEditPage = lazy(() => import('src/pages/users/user-edit'));
@@ -50,10 +62,26 @@ export function Router() {
       children: [
         { element: <HomePage />, index: true },
 
-        { path: 'expense-type', element: <ExpenseTypePage /> },
-        { path: 'expense-type/create', element: <ExpenseTypeCreatePage /> },
-        { path: 'expense-type/edit/:expenseTypeId', element: <ExpenseTypeEditPage /> },
-        { path: 'expense-type/detail/:expenseTypeId', element: <ExpenseTypeDetailPage /> },
+        { path: 'incomes', element: <IncomePage /> },
+        { path: 'incomes/create', element: <IncomeCreatePage /> },
+        { path: 'incomes/edit/:incomeId', element: <IncomeEditPage /> },
+        { path: 'incomes/detail/:incomeId', element: <IncomeDetailPage /> },
+
+        { path: 'outcomes', element: <OutcomePage /> },
+        { path: 'outcomes/create', element: <OutcomeCreatePage /> },
+        { path: 'outcomes/edit/:outcomeId', element: <OutcomeEditPage /> },
+        { path: 'outcomes/detail/:outcomeId', element: <OutcomeDetailPage /> },
+
+        { path: 'expense-types', element: <ExpenseTypePage /> },
+        { path: 'expense-types/create', element: <ExpenseTypeCreatePage /> },
+        { path: 'expense-types/edit/:expenseTypeId', element: <ExpenseTypeEditPage /> },
+        { path: 'expense-types/detail/:expenseTypeId', element: <ExpenseTypeDetailPage /> },
+
+        { path: 'payment-types', element: <PaymentTypePage /> },
+        { path: 'payment-types/create', element: <PaymentTypeCreatePage /> },
+        { path: 'payment-types/edit/:paymentTypeId', element: <PaymentTypeEditPage /> },
+        { path: 'payment-types/detail/:paymentTypeId', element: <PaymentTypeDetailPage /> },
+
         { path: 'users', element: <UserPage /> },
         { path: 'users/create', element: <UserCreatePage /> },
         { path: 'users/edit/:userId', element: <UserEditPage /> },

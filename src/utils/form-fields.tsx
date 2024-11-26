@@ -56,23 +56,82 @@ export const expenseTypeFormFieldsList = [
         id: "id",
         name: "active",
         label: "Activo",
+        type: "select",
+        required: true,
+        multiple: false,
+        options: ['Si', 'No'],
+    },
+];
+
+export const paymentTypeFormFieldsList = [
+    {
+        id: "id",
+        name: "description",
+        label: "Descripción",
         type: "text",
         required: true,
         multiple: false,
     },
     {
         id: "id",
-        name: "created",
-        label: "Fecha de creación",
-        type: "checkbox",
+        name: "active",
+        label: "Activo",
+        type: "select",
+        required: true,
+        multiple: false,
+        options: ['Si', 'No'],
+    },
+];
+
+export const incomeFormFieldsList = [
+    {
+        id: "id",
+        name: "description",
+        label: "Descripción",
+        type: "text",
         required: true,
         multiple: false,
     },
     {
         id: "id",
-        name: "modified",
-        label: "Fecha de modificación",
-        type: "checkbox",
+        name: "value",
+        label: "Valor",
+        type: "text",
+        required: true,
+        multiple: false,
+    },
+];
+
+export const outcomeFormFieldsList = [
+    {
+        id: "id",
+        name: "description",
+        label: "Descripción",
+        type: "text",
+        required: true,
+        multiple: false,
+    },
+    {
+        id: "id",
+        name: "value",
+        label: "Valor",
+        type: "text",
+        required: true,
+        multiple: false,
+    },
+    {
+        id: "id",
+        name: "expenseType",
+        label: "Tipo de gasto",
+        type: "text",
+        required: true,
+        multiple: false,
+    },
+    {
+        id: "id",
+        name: "paymentType",
+        label: "Tipo de pago",
+        type: "text",
         required: true,
         multiple: false,
     },

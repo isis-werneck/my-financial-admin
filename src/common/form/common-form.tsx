@@ -1,10 +1,14 @@
+import type {FormEvent} from "react";
+
+import { useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import {FormEvent, useEffect, useState} from "react";
-import {FormControl} from "@mui/material";
-import MenuItem from "@mui/material/MenuItem";
+
 import Box from "@mui/material/Box";
+import {FormControl} from "@mui/material";
 import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
 import TextField from "@mui/material/TextField";
+
 import {Label} from "../../components/label";
 import {Iconify} from "../../components/iconify";
 
@@ -12,7 +16,7 @@ import {Iconify} from "../../components/iconify";
 export function CommonForm({section, formAction, resourceId, formFields, errors, data}: any) {
     const navigate = useNavigate();
 
-    const urlAPI = resourceId ? `https://ecam-api.ddev.site/api/${section}/${resourceId}` : "";
+    const urlAPI = resourceId ? `https://localhost/${section}/${resourceId}` : "";
 
     const [formData, setFormData] = useState(data);
 
@@ -51,19 +55,21 @@ export function CommonForm({section, formAction, resourceId, formFields, errors,
     const submitForm = async () => {
 
         if (formAction === 'create') {
+            setFormData({...formData, "created": new Date().toISOString(), "modified": new Date().toISOString()});
 
-            fetch(`https://ecam-api.ddev.site/api/${section}`, {
+            fetch(`https://localhost/${section}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/ld+json'
                 },
                 body: JSON.stringify(formData)
             }).then((response) => {
-                if (response.status === 201) navigate('/users');
+                if (response.status === 201) navigate(`/${section}`);
 
             });
         } else {
-            fetch(`https://ecam-api.ddev.site/api/${section}/${formData.id}`, {
+            setFormData({...formData, "modified": new Date().toISOString()});
+            await fetch(`https://localhost/${section}/${formData.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/ld+json'

@@ -49,7 +49,7 @@ export function CommonTableRow({id, row, selected, onSelectRow, section, dataPro
     const handleDeleteRow = useCallback(() => {
 
         if (window.confirm('¿Desea eliminar este registro?')) {
-            fetch(`https://ecam-api.ddev.site/api/${section}/${id}`, {
+            fetch(`https://localhost/${section}/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/ld+json'
@@ -59,6 +59,21 @@ export function CommonTableRow({id, row, selected, onSelectRow, section, dataPro
         setOpenPopover(null);
     }, [section, id]);
 
+
+    const cellValue = (cellId: string) => {
+        let value = (row as { [key: string]: any })[cellId];
+        if (cellId === 'created' || cellId === 'modified') {
+            const formatDate = new Date(value);
+            value = formatDate.toLocaleDateString();
+        }
+
+        if (cellId === 'active') {
+            value = value ? 'Si' : 'No';
+        }
+
+        return value;
+    };
+
     return (
         <>
             <TableRow hover tabIndex={-1} role="checkbox" selected={selected}>
@@ -66,9 +81,8 @@ export function CommonTableRow({id, row, selected, onSelectRow, section, dataPro
                     <Checkbox disableRipple checked={selected} onChange={onSelectRow}/>
                 </TableCell>
                 {dataProps.map((cell) => (
-                    cell.id !== '' && <TableCell key={`data_${cell.id}_${row[cell.id]}`}>{row[cell.id]}</TableCell>
+                    cell.id !== '' && <TableCell key={`data_${cell.id}_${row[cell.id]}`}>{cellValue(cell.id)}</TableCell>
                 ))}
-
                 <TableCell align="right">
                     <IconButton onClick={handleOpenPopover}>
                         <Iconify icon="eva:more-vertical-fill"/>

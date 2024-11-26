@@ -2,17 +2,17 @@ import { Helmet } from 'react-helmet-async';
 
 import { CONFIG } from 'src/config-global';
 
-import {ExpenseTypeForm} from "../../sections/expense-types/expense-type-form";
+import {IncomeForm} from "../../sections/incomes/income-form";
 // ----------------------------------------------------------------------
 
 export default function Page() {
     return (
         <>
             <Helmet>
-                <title> {`Editar tipo de gasto - ${CONFIG.appName}`}</title>
+                <title> {`Editar ingreso - ${CONFIG.appName}`}</title>
             </Helmet>
 
-            <ExpenseTypeForm />
+            <IncomeForm />
         </>
     );
 }
